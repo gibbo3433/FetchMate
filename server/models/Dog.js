@@ -11,13 +11,11 @@ const dogSchema = new Schema({
   },
   breed: {
     type: String,
-    required: 'Dog breed required',
     required: true,
     trim: true,
   },
   age: {
     type: Number,
-    required: 'Dog age is required',
     required: true,
     trim: true,
   },
