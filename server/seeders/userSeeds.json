@@ -1,7 +1,7 @@
 [
   {
-    "username": "Brian Kernighan",
-    "email": "bkernighan@techfriends.dev",
+    "username": "Calvin Smith",
+    "email": "CS99@techfriends.dev",
     "password": "password01"
   },
   {
@@ -10,8 +10,8 @@
     "password": "password02"
   },
   {
-    "username": "Why The Lucky Stiff",
-    "email": "wtls@techfriends.dev",
+    "username": "Angella Merkel",
+    "email": "angieM@techfriends.dev",
     "password": "password03"
   },
   {
@@ -25,13 +25,13 @@
     "password": "password05"
   },
   {
-    "username": "Alan Kay",
-    "email": "akay@techfriends.dev",
+    "username": "Georgie Smith",
+    "email": "Geesmith@techfriends.dev",
     "password": "password06"
   },
   {
-    "username": "C.A.R. Hoare",
-    "email": "choare@techfriends.dev",
+    "username": "Claire Roberts",
+    "email": "robertsclaire@techfriends.dev",
     "password": "password07"
   },
   {
@@ -40,8 +40,8 @@
     "password": "password08"
   },
   {
-    "username": "Donald Knuth",
-    "email": "dknuth@techfriends.dev",
+    "username": "Donald Duck",
+    "email": "quackquackduck@techfriends.dev",
     "password": "password09"
   },
   {

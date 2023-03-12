@@ -1,21 +1,23 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
-const productSchema = new Schema({
-  title: {
+const dogSchema = new Schema({
+  name: {
     type: String,
-    required: 'The Product title is required',
+    required: 'Dog name required',
     minlength: 1,
     maxlength: 280,
     trim: true,
   },
-  description: {
+  breed: {
     type: String,
+    required: 'Dog breed required',
     required: true,
     trim: true,
   },
-  category: {
-    type: String,
+  age: {
+    type: Number,
+    required: 'Dog age is required',
     required: true,
     trim: true,
   },
@@ -24,8 +26,8 @@ const productSchema = new Schema({
     required: true,
     trim: true,
   },
-  price: {
-    type: Number,
+  behaviour: {
+    type: String,
     required: true,
     trim: true,
   },
@@ -36,6 +38,6 @@ const productSchema = new Schema({
   }
 });
 
-const Product = model('Product', productSchema);
+const Dog = model('Dog', dogSchema);
 
-module.exports = Product;
+module.exports = Dog;

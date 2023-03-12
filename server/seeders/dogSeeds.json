@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Mollie",
+    "breed": "Golden Retriever",
+    "age": 4,
+    "image": "dx7.png",
+    "behavior": "Calm and fun to play with."
+  },
+  {
+    "name": "Max",
+    "breed": "Pitbull",
+    "age": 2,
+    "image": "dx7.png",
+    "behavior": "Quite loud and assertive around small dogs, despite the looks he is very loving."
+  },{
+    "name": "Fudge",
+    "breed": "French Bulldog",
+    "age": 4,
+    "image": "dx7.png",
+    "behavior": "He can be quite loud for his size however "
+  },{
+    "name": "Millie",
+    "breed": "Border Collie",
+    "age": 5,
+    "image": "dx7.png",
+    "behavior": "She is quite a obedient dog who loves to be around children. She loves daily walks and a cheeky treat here and there."
+  },{
+    "name": "Charlie",
+    "breed": "German Shepard",
+    "age": 2,
+    "image": "dx7.png",
+    "behavior": "Well trained and playful when around dogs, doesn't bite unless he feels in danger"
+  }
+  
+]
