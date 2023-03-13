@@ -19,7 +19,12 @@ const useStyles = makeStyles(() => ({
   toolbar: {
     display: "flex",
     justifyContent: "space-between",
-  }
+  },
+  header: {
+    backgroundColor: "#400CCC",
+    paddingRight: "79px",
+    paddingLeft: "118px",
+  },
 }));
 
 const headersData = [
@@ -49,7 +54,7 @@ function Header() {
   const { logo, tabButtons, toolbar } = useStyles();
 
   const displayDesktop = () => {
-    return <Toolbar className={toolbar}>{Logo}{getMenuButtons()}</Toolbar>;
+    return <Toolbar className={toolbar}>{Logo}<div>{getMenuButtons()}</div></Toolbar>;
   };
 
   const getMenuButtons = () => {
@@ -76,7 +81,7 @@ function Header() {
   );
 
   return (
-    <header>
+    <header >
       <AppBar>{displayDesktop()}</AppBar>
     </header>
   );
