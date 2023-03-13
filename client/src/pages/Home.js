@@ -1,5 +1,5 @@
 // UI Components
-import DogCard from '../components/ProductCard'
+import DogCard from '../components/DogCard'
 import CategoriesLinks from '../components/CategoriesLinks'
 
 import { useQuery } from '@apollo/client';
