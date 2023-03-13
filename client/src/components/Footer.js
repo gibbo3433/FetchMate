@@ -1,11 +1,28 @@
-import logo from '../assets/logo.svg';
+import React from "react";
+import { AppBar, Toolbar, Typography, makeStyles} from "@material-ui/core";
 
-const Footer = () => {
-  return (
-    <div className='footer'>
-      Copyright &copy; {new Date().getFullYear()}
-    </div>
-  )
-}
+const useStyles = makeStyles(() => ({  
+  bottom: {
+    width: '100%',
+    position: 'fixed',
+    bottom: 0,
+  },
+}));
 
-export default Footer
+
+const Footer
+
+
+const Footer() {}
+
+  const { bottom } = useStyles();
+
+        <AppBar className={bottom}>
+            <Toolbar style={{ justifyContent: "center" }}>
+                <Typography variant="caption">©2020</Typography>
+             </Toolbar>
+         </AppBar>
+
+
+  
+export default Footer;
