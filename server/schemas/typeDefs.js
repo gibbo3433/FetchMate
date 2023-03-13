@@ -9,7 +9,7 @@ const typeDefs = gql`
     orders: [Order]!
   }
 
-  type Product {
+  type Dog {
     _id: ID
     title: String
     description: String
@@ -22,7 +22,7 @@ const typeDefs = gql`
     _id: ID
     name: String
     createdAt: String
-    products: [Product]!
+    dogs: [Dog]!
   }
 
   type Order {
@@ -30,7 +30,7 @@ const typeDefs = gql`
     customerName: String
     customerAddress: String
     total: Int
-    items: [Product]!
+    items: [Dog]!
     createdAt: String
   }
 
@@ -45,8 +45,8 @@ const typeDefs = gql`
     categories: [Category]
     category(name: String!): Category
     me: User
-    products: [Product]
-    product(productId: ID!): Product
+    dogs: [Dog]
+    dog(dogId: ID!): Dog
     orders: [Order]
     order(orderId: ID!): Order
   }

@@ -1,39 +1,39 @@
 // UI Components
-import ProductCard from '../components/ProductCard'
+import DogCard from '../components/DogCard'
 import CategoriesLinks from '../components/CategoriesLinks'
 
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import { QUERY_SINGLE_PRODUCT } from '../utils/queries';
+import { QUERY_SINGLE_DOG } from '../utils/queries';
 
 // Shopping Cart
 import { useCart } from '../context/CartContext'
 
-const Product = () => {
+const Dog = () => {
 
   const { onAddToCart } = useCart()
 
   const params = useParams();
-  const { productId } = useParams();
+  const { dogId } = useParams();
 
   console.log('params: ', params)
 
-  const { loading, data } = useQuery(QUERY_SINGLE_PRODUCT, {
+  const { loading, data } = useQuery(QUERY_SINGLE_DOG, {
     // pass URL parameter
-    variables: { productId: productId },
+    variables: { dogId: dogId },
   });
 
-  const product = data?.product || {};
-  const productTitle = loading ? 'Loading Product...' : data?.product.title;
-  console.log(`Product: products = ${data}`)
+  const dog = data?.dog || {};
+  const dogTitle = loading ? 'Loading Dog...' : data?.dog.title;
+  console.log(`Dog: dogs = ${data}`)
 
   return (
     <>
       <div className='p-5 m-2 border w-75'>
-        <h1>{productTitle}</h1>
+        <h1>{dogTitle}</h1>
         <div className='section-title'>
 
-          <ProductCard key={product.title} {...product} onAddToCart={() => onAddToCart(product)} />
+          <DogCard key={dog.title} {...dog} onAddToCart={() => onAddToCart(dog)} />
 
         </div>
       </div>
@@ -47,4 +47,4 @@ const Product = () => {
   )
 }
 
-export default Product
+export default Dog

@@ -1,9 +1,9 @@
 // UI Components
-import ProductCard from '../components/ProductCard'
+import DogCard from '../components/ProductCard'
 import CategoriesLinks from '../components/CategoriesLinks'
 
 import { useQuery } from '@apollo/client';
-import { QUERY_FEATURED_PRODUCTS } from '../utils/queries';
+import { QUERY_FEATURED_DOGS } from '../utils/queries';
 
 // Shopping Cart
 import { useCart } from '../context/CartContext'
@@ -12,15 +12,15 @@ const Home = () => {
   
   const { onAddToCart } = useCart()
 
-  const { loading, data } = useQuery(QUERY_FEATURED_PRODUCTS);
-  const products = data?.products || [];
+  const { loading, data } = useQuery(QUERY_FEATURED_DOGS);
+  const dogs = data?.dogs || [];
 
   return (
     <>
       <div className='w-75 border m-2 p-5'>
         <div className='section-title'>
-          {products.map(product => (
-            <ProductCard key={product.title} {...product} onAddToCart={()=>onAddToCart(product)} />
+          {dogs.map(dog => (
+            <DogCard key={dog.title} {...dog} onAddToCart={()=>onAddToCart(dog)} />
           ))}
         </div>
       </div>  

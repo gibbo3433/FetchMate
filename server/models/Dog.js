@@ -24,11 +24,6 @@ const dogSchema = new Schema({
     required: true,
     trim: true,
   },
-  behaviour: {
-    type: String,
-    required: true,
-    trim: true,
-  },
   createdAt: {
     type: Date,
     default: Date.now,

@@ -11,8 +11,8 @@ import CartProvider from './context/CartContext';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Basket from './pages/Basket';
-import Product from './pages/Product';
-import ProductList from './pages/ProductList';
+import Dog from './pages/Dog';
+import DogList from './pages/DogList';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
@@ -75,11 +75,11 @@ function App() {
               />
               <Route
                 path="/category/:category"
-                element={<ProductList />}
+                element={<DogList />}
               />
               <Route
-                path="/product/:productId"
-                element={<Product />}
+                path="/dog/:dogId"
+                element={<Dog />}
               />
 
             </Routes>

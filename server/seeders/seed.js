@@ -4,7 +4,6 @@ const userSeeds = require('./userSeeds.json');
 const categorySeeds = require('./categorySeeds.json');
 const dogSeeds = require('./dogSeeds.json');
 
-// TODO: add seed for orders
 //const orderSeeds = require('./orderSeeds.json');
 
 db.once('open', async () => {

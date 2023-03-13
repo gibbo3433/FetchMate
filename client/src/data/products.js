@@ -1,22 +1,22 @@
-const products = [
+const dogs = [
     {
-      title: 'Product 1',
+      title: 'Dog 1',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.',
       image: 'https://picsum.photos/200',
       price: '$100'
     },
     {
-      title: 'Product 2',
+      title: 'Dog 2',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.',
       image: 'https://picsum.photos/200',
       price: '$100'
     },
     {
-      title: 'Product 3',
+      title: 'Dog 3',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.',
       image: 'https://picsum.photos/200',
       price: '$100'
     }
   ]
 
-  export default products;
+  export default dogs;

@@ -7,14 +7,14 @@ const BasketCard = ( props ) => {
   return (
     <div className='border p-5 m-2 flex'>
         <div>
-            <img src={`/assets/${image}`} alt={title} className='product-image p-5' />
+            <img src={`/assets/${image}`} alt={title} className='dog-image p-5' />
         </div>
-        <div className='product-details'>
-            <Link to={`/product/${_id}`}>{title}</Link>
-            <div className='product-description'>
+        <div className='dog-details'>
+            <Link to={`/dog/${_id}`}>{title}</Link>
+            <div className='dog-description'>
                 <p className='text-sm'>{description}</p>
             </div>
-            <div className='product-price'>
+            <div className='dog-price'>
             <p className='text-lg mr-5'>£{price}</p>
                 <button className='btn btn-primary' onClick={onRemoveFromCart}>Remove from Cart</button>
             </div>
