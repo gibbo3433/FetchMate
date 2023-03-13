@@ -10,6 +10,16 @@ const useStyles = makeStyles(() => ({
     color: "#FFFEFE",
     textAlign: "left",
   },
+  tabButtons: {
+    fontFamily: "Open Sans, sans-serif",
+    fontWeight: 700,
+    size: "18px",
+    marginLeft: "38px",
+  },
+  toolbar: {
+    display: "flex",
+    justifyContent: "space-between",
+  }
 }));
 
 const headersData = [
@@ -36,16 +46,16 @@ const headersData = [
 
 function Header() {
 
-  const { logo } = useStyles();
+  const { logo, tabButtons, toolbar } = useStyles();
 
   const displayDesktop = () => {
-    return <Toolbar>{Logo}{getMenuButtons()}</Toolbar>;
+    return <Toolbar className={toolbar}>{Logo}{getMenuButtons()}</Toolbar>;
   };
 
   const getMenuButtons = () => {
   return headersData.map(({ label, href }) => {
     return (
-      <Button
+      <Button className={tabButtons}
         {...{
           key: label,
           color: "inherit",
@@ -60,7 +70,7 @@ function Header() {
  };
 
   const Logo = (
-    <Typography variant="h6" component="h1" className="logo">
+    <Typography variant="h6" component="h1" className={logo}>
       Fetch-Mate
     </Typography>
   );
