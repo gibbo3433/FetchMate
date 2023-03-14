@@ -6,11 +6,9 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import CartProvider from './context/CartContext';
 
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import Basket from './pages/Basket';
 import Dog from './pages/Dog';
 import DogList from './pages/DogList';
 import Signup from './pages/Signup';
@@ -44,7 +42,6 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <CartProvider>
         <Router>
 
           <Layout>
@@ -62,20 +59,12 @@ function App() {
                 element={<Signup />}
               />
               <Route
-                path="/basket"
-                element={<Basket />}
-              />
-              <Route
                 path="/me"
                 element={<Home />}
               />
               <Route
                 path="/profiles/:username"
                 element={<Profile />}
-              />
-              <Route
-                path="/category/:category"
-                element={<DogList />}
               />
               <Route
                 path="/dog/:dogId"
@@ -86,7 +75,6 @@ function App() {
           </Layout>
 
         </Router>
-      </CartProvider>
     </ApolloProvider>
   );
 }

@@ -18,22 +18,6 @@ const typeDefs = gql`
     createdAt: String
   }
 
-  type Category {
-    _id: ID
-    name: String
-    createdAt: String
-    dogs: [Dog]!
-  }
-
-  type Order {
-    _id: ID
-    customerName: String
-    customerAddress: String
-    total: Int
-    items: [Dog]!
-    createdAt: String
-  }
-
   type Auth {
     token: ID!
     user: User

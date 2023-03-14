@@ -10,23 +10,11 @@ const resolvers = {
     user: async (parent, { username }) => {
       return User.findOne({ username }).populate('orders');
     },
-    categories: async () => {
-      return Category.find();
-    },
-    category: async (parent, { name }) => {
-      return Category.findOne({ name: name }).populate('dog');
-    },
     dog: async () => {
       return Dog.find();
     },
     dog: async (parent, { dogId }) => {
       return Dog.findOne({ _id: dogId });
-    },
-    orders: async () => {
-      return Order.find();
-    },
-    order: async (parent, { orderId }) => {
-      return Order.findOne({ _id: orderId });
     },
     me: async (parent, args, context) => {
       if (context.user) {
