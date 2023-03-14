@@ -1,5 +1,5 @@
+const { User, Post } = require('./models');
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Dog, Category, Order } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -8,19 +8,19 @@ const resolvers = {
       return User.find();
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('orders');
-    },
-    dog: async () => {
-      return Dog.find();
-    },
-    dog: async (parent, { dogId }) => {
-      return Dog.findOne({ _id: dogId });
+      return User.findOne({ username });
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate('orders');
+        return User.findOne({ _id: context.user._id });
       }
       throw new AuthenticationError('You need to be logged in!');
+    },
+    posts: async () => {
+      return Post.find();
+    },
+    post: async (parent, { postId }) => {
+      return Post.findOne({ _id: postId });
     },
   },
 
@@ -32,38 +32,15 @@ const resolvers = {
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
-
       if (!user) {
-        throw new AuthenticationError('No user found with this email address');
+        throw new AuthenticationError('Incorrect email or password!');
       }
-
       const correctPw = await user.isCorrectPassword(password);
-
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError('Incorrect email or password!');
       }
-
       const token = signToken(user);
-
       return { token, user };
-    },
-    newOrder: async (parent, { customerName, customerAddress, items, total }, context) => {
-      if (context.user) {
-        const order = await Order.create({
-          customerName,
-          customerAddress,
-          items,
-          total
-        });
-
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $addToSet: { orders: order._id } }
-        );
-
-        return thought;
-      }
-      throw new AuthenticationError('You need to be logged in!');
     },
   },
 };
