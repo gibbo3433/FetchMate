@@ -23,7 +23,7 @@ const orderSchema = new Schema({
   },
   items: [{
     type: Schema.Types.ObjectId,
-    ref: 'Product',
+    ref: 'Dog',
   }],
   createdAt: {
     type: Date,

@@ -1,5 +1,5 @@
 // UI Components
-import ProductCard from '../components/ProductCard'
+import DogCard from '../components/DogCard'
 import CategoriesLinks from '../components/CategoriesLinks'
 
 import { useParams } from 'react-router-dom';
@@ -9,30 +9,30 @@ import { QUERY_SINGLE_CATEGORY } from '../utils/queries';
 // Shopping Cart
 import { useCart } from '../context/CartContext'
 
-const ProductList = () => {
+const DogList = () => {
   
   const { onAddToCart } = useCart()
 
   const { category } = useParams();
 
-  console.log(`ProductList: category = ${category}`)
+  console.log(`DogList: category = ${category}`)
 
   const { loading, data } = useQuery(QUERY_SINGLE_CATEGORY, {
     // pass URL parameter
     variables: { name: category },
   });
 
-  const products = data?.category.products || [];
-  const categoryName = data?.category.name || 'Loading Products...';
-  console.log(`ProductList: products = ${products}`)
+  const dogs = data?.category.dogs || [];
+  const categoryName = data?.category.name || 'Loading Dogs...';
+  console.log(`DogList: products = ${dogs}`)
 
   return (
     <>
       <div className='w-75 border m-2 p-5'>
         <h1>All {categoryName}</h1>
         <div className='section-title'>
-          {products.map(product => (
-            <ProductCard key={product.title} {...product} onAddToCart={()=>onAddToCart(product)} />
+          {dogs.map(dog => (
+            <DogCard key={dog.title} {...dog} onAddToCart={()=>onAddToCart(dog)} />
           ))}
         </div>
       </div>  
@@ -46,4 +46,4 @@ const ProductList = () => {
   )
 }
 
-export default ProductList
+export default DogList

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const ProductCard = ( props ) => {
+const DogCard = ( props ) => {
 
     console.log(props)
     const {title, description, image, price, _id, onAddToCart} = props;
@@ -11,12 +11,12 @@ const ProductCard = ( props ) => {
         <div>
             <img src={`/assets/${image}`} alt={title} className='product-image p-5' />
         </div>
-        <div className='product-details'>
-            <Link to={`/product/${_id}`}>{title}</Link>
-            <div className='product-description'>
+        <div className='dog-details'>
+            <Link to={`/dog/${_id}`}>{title}</Link>
+            <div className='dog-description'>
                 <p className='text-sm'>{description}</p>
             </div>
-            <div className='product-price'>
+            <div className='dog-price'>
                 <p className='text-lg mr-5'>£{price}</p>
                 <button className='btn btn-primary' onClick={onAddToCart}>Add to Cart</button>
             </div>
@@ -25,4 +25,4 @@ const ProductCard = ( props ) => {
  )
 }
 
-export default ProductCard
+export default DogCard

@@ -9,9 +9,9 @@ const categorySchema = new Schema({
     maxlength: 280,
     trim: true,
   },
-  products: [{
+  dogs: [{
     type: Schema.Types.ObjectId,
-    ref: 'Product',
+    ref: 'Dog',
   }],
   createdAt: {
     type: Date,

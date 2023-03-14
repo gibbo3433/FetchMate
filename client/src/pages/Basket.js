@@ -15,8 +15,8 @@ const Basket = () => {
     <>
       <div className='w-75 border m-2 p-5'>
         <div className='section-title'>
-          {cartItems.map(product => (
-            <BasketCard key={product.title} {...product} onRemoveFromCart={()=>onRemoveFromCart(product)} />
+          {cartItems.map(dog => (
+            <BasketCard key={dog.title} {...dog} onRemoveFromCart={()=>onRemoveFromCart(dog)} />
           ))}
         </div>
       </div>  

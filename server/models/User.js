@@ -1,45 +1,99 @@
 const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
-
+​
 const userSchema = new Schema({
   username: {
     type: String,
-    required: true,
     unique: true,
+    required: true,
     trim: true,
   },
   email: {
     type: String,
-    required: true,
-    unique: true,
-    match: [/.+@.+\..+/, 'Must match an email address!'],
+    validate: {
+      validator: function (v) {
+        return /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(v);
+      },
+      message: props => `${props.value} is not a valid e-mail!`
+    },
+    required: [true, 'User e-mail required'],
+    unique: true
   },
-  password: {
+  userGender: {
     type: String,
+    minlength: 1,
+    maxlength: 25,
     required: true,
-    minlength: 5,
+    trim: true,
   },
-  orders: [
+  userAge: {
+    type: Number,
+    unique: true,
+    required: true,
+    trim: true,
+  },
+  location: {
+    type: String,
+    minlength: 1,
+    maxlength: 100,
+    required: true,
+    trim: true,
+  },
+  userBio: {
+    type: String,
+    minlength: 1,
+    maxlength: 300,
+    required: true,
+    trim: true,
+  },
+  userWalkTimes: {
+    type: String,
+    minlength: 1,
+    maxlength: 300,
+    required: true,
+    trim: true,
+  },
+  userDogName: {
+    type: String,
+    minlength: 1,
+    maxlength: 50,
+    required: true,
+    trim: true,
+  },
+  userDogBreed: {
+    type: String,
+    minlength: 1,
+    maxlength: 50,
+    required: true,
+    trim: true,
+  },
+  userDogAge: {
+    type: Number,
+    unique: true,
+    required: true,
+    trim: true,
+
+  },
+  userDogBio: {
+    type: String,
+    minlength: 1,
+    maxlength: 300,
+    required: true,
+    trim: true,
+  },
+  posts: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Order',
+      ref: 'Posts'
     },
   ],
-});
-
-userSchema.pre('save', async function (next) {
-  if (this.isNew || this.isModified('password')) {
-    const saltRounds = 10;
-    this.password = await bcrypt.hash(this.password, saltRounds);
+},
+{
+  toJSON: {
+    virtuals: true
   }
-
-  next();
 });
-
-userSchema.methods.isCorrectPassword = async function (password) {
-  return bcrypt.compare(password, this.password);
-};
+​
 
 const User = model('User', userSchema);
-
+​
 module.exports = User;

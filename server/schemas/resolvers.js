@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Product, Category, Order } = require('../models');
+const { User, Dog, Category, Order } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -10,23 +10,11 @@ const resolvers = {
     user: async (parent, { username }) => {
       return User.findOne({ username }).populate('orders');
     },
-    categories: async () => {
-      return Category.find();
+    dog: async () => {
+      return Dog.find();
     },
-    category: async (parent, { name }) => {
-      return Category.findOne({ name: name }).populate('products');
-    },
-    products: async () => {
-      return Product.find();
-    },
-    product: async (parent, { productId }) => {
-      return Product.findOne({ _id: productId });
-    },
-    orders: async () => {
-      return Order.find();
-    },
-    order: async (parent, { orderId }) => {
-      return Order.findOne({ _id: orderId });
+    dog: async (parent, { dogId }) => {
+      return Dog.findOne({ _id: dogId });
     },
     me: async (parent, args, context) => {
       if (context.user) {
