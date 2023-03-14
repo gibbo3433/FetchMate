@@ -10,7 +10,7 @@ export default function Header() {
             <a
               rel="noopener noreferrer"
               href="https://github.com/"
-              class="flex items-center px-6 -mb-1 border-b-2 dark:border-transparent dark:text-violet-100 dark:border-violet-400"
+              class="flex items-center px-6 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
             >
               Fetch Mate
             </a>
