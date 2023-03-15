@@ -2,12 +2,7 @@
 import DogCard from '../components/DogCard'
 import CategoriesLinks from '../components/CategoriesLinks'
 
-import { useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
-import { QUERY_SINGLE_CATEGORY } from '../utils/queries';
 
-// Shopping Cart
-import { useCart } from '../context/CartContext'
 
 const DogList = () => {
   

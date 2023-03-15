@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
 
-const DogCard = ( props ) => {
 
-    console.log(props)
-    const {title, description, image, price, _id, onAddToCart} = props;
+const ProductCard = ( props ) => {
 
 
   return (
