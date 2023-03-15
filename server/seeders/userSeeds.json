@@ -5,7 +5,13 @@
     "password": "password01",
     "userGender": "Male",
     "userAge": 24,
-    "location": "London"
+    "location": "London",
+    "userBio": "Hi there! I'm a dog lover living in the UK. When I'm not cuddling with my beloved pug, you can find me exploring the countryside with my furry friend by my side. I love everything about dogs, from their wagging tails to their wet noses. Looking forward to connecting with fellow dog lovers!",
+    "userWalkTimes":,
+    "userDogName":,
+    "userDogBreed":,
+    "userDogAge":,
+    "userDogBio":,
   },
   {
     "username": "Max Kanat-Alexander",
@@ -13,7 +19,14 @@
     "password": "password02",
     "userGender": "Male",
     "userAge": 45,
-    "location": "Birmingham"
+    "location": "London",
+    "userBio": "Hey, fellow dog lovers! I'm a proud owner of a fluffy Shih Tzu named Gizmo. I can often be found walking him through the picturesque streets of London or just chilling on the couch, watching Netflix together. I'm excited to connect with others who share my passion for pups!",
+    "userWalkTimes":,
+    "userDogName":,
+    "userDogBreed":,
+    "userDogAge":,
+    "userDogBio":,
+    
   },
   {
     "username": "Angella Merkel",
@@ -21,7 +34,14 @@
     "password": "password03",
     "userGender": "Female",
     "userAge": 32,
-    "location": "Yorkshire"
+    "location": "Yorkshire",
+    "userBio": "Woof woof! I'm a dog lover who resides in the UK. I'm a proud owner of a loyal and energetic Cocker Spaniel named Max. We enjoy running and exploring new trails together. Dogs bring so much joy and happiness to our lives, and I'm excited to connect with others who feel the same!",
+    "userWalkTimes":,
+    "userDogName":,
+    "userDogBreed":,
+    "userDogAge":,
+    "userDogBio":,
+    
   },
   {
     "username": "Kent Beck",
@@ -29,7 +49,14 @@
     "password": "password04",
     "userGender": "Male",
     "userAge": 48,
-    "location": "Worcester"
+    "location": "Worcester",
+    "userBio": "Hey, I'm a dog lover living in the UK, and I have a soft spot for rescue pups. I currently share my home with a lovable Beagle mix named Charlie, who has brought so much love and laughter to my life. I believe every dog deserves a loving home, and I'm passionate about promoting animal welfare and adoption.",
+    "userWalkTimes":,
+    "userDogName":,
+    "userDogBreed":,
+    "userDogAge":,
+    "userDogBio":,
+    
   },
   {
     "username": "Edward V. Berard",
@@ -37,7 +64,14 @@
     "password": "password05",
     "userGender": "Male",
     "userAge": 55,
-    "location": "Cornwall"
+    "location": "Cornwall",
+    "userBio": "Hi, fellow dog lovers! I'm a proud owner of a cheeky Chihuahua named Bella. She might be small, but she has a big personality and knows how to make me laugh. I love being a dog mom and sharing my life with my furry companion. Let's connect and share our love for dogs!",
+    "userWalkTimes":,
+    "userDogName":,
+    "userDogBreed":,
+    "userDogAge":,
+    "userDogBio":,
+
   },
   {
     "username": "Georgie Smith",
@@ -45,7 +79,13 @@
     "password": "password06",
     "userGender": "Prefer not to say",
     "userAge": 22,
-    "location": "Berkshire"
+    "location": "Berkshire",
+    "userBio": "Hey, everyone! I'm a dog lover from the UK, and I'm the proud owner of a goofy and playful Boxer named Rocky. We love going on long walks and playing fetch in the park. Dogs are so loyal and loving, and I'm grateful for the joy and companionship that Rocky brings to my life.",
+    "userWalkTimes":,
+    "userDogName":,
+    "userDogBreed":,
+    "userDogAge":,
+    "userDogBio":,
   },
   {
     "username": "Claire Roberts",
@@ -53,7 +93,13 @@
     "password": "password07",
     "userGender": "Female",
     "userAge": 27,
-    "location": "Shropshire"
+    "location": "Shropshire",
+    "userBio":,
+    "userWalkTimes":,
+    "userDogName":,
+    "userDogBreed":,
+    "userDogAge":,
+    "userDogBio":,
   },
   {
     "username": "David Thomas",
@@ -61,7 +107,13 @@
     "password": "password08",
     "userGender": "Male",
     "userAge": 30,
-    "location": "Coventry"
+    "location": "Coventry",
+    "userBio":,
+    "userWalkTimes":,
+    "userDogName":,
+    "userDogBreed":,
+    "userDogAge":,
+    "userDogBio":,
   },
   {
     "username": "Donald Duck",
@@ -69,7 +121,13 @@
     "password": "password09",
     "userGender": "Male",
     "userAge": 77,
-    "location": "London"
+    "location": "London",
+    "userBio":,
+    "userWalkTimes":,
+    "userDogName":,
+    "userDogBreed":,
+    "userDogAge":,
+    "userDogBio":,
   },
   {
     "username": "Lernantino",
@@ -77,6 +135,12 @@
     "password": "password10",
     "userGender": "Male",
     "userAge": 26,
-    "location": "Warwick"
+    "location": "Warwick",
+    "userBio":,
+    "userWalkTimes":,
+    "userDogName":,
+    "userDogBreed":,
+    "userDogAge":,
+    "userDogBio":,
   }
 ]
