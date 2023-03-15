@@ -1,29 +1,24 @@
 const db = require('../config/connection');
-const { User, Product, Category, Order } = require('../models');
+const { User, Dog, } = require('../models');
 const userSeeds = require('./userSeeds.json');
-const categorySeeds = require('./categorySeeds.json');
-const productSeeds = require('./productSeeds.json');
+const dogSeeds = require('./dogSeeds.json');
 
-// TODO: add seed for orders
-//const orderSeeds = require('./orderSeeds.json');
 
 db.once('open', async () => {
   try {
-    await Category.deleteMany({});
     await User.deleteMany({});
-    await Product.deleteMany({});
-    await Order.deleteMany({});
+    await Dog.deleteMany({});
 
     await User.create(userSeeds);
     await Category.create(categorySeeds);
 
-    for (let i = 0; i < productSeeds.length; i++) {
-      const { _id, category } = await Product.create(productSeeds[i]);
+    for (let i = 0; i < dogSeeds.length; i++) {
+      const { _id, category } = await Dog.create(dogSeeds[i]);
       const user = await Category.findOneAndUpdate(
         { name: category },
         {
           $addToSet: {
-            products: _id,
+            dog: _id,
           },
         }
       );

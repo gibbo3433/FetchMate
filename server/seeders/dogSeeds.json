@@ -1,0 +1,31 @@
+[
+  {
+    "name": "Mollie",
+    "breed": "Golden Retriever",
+    "age": 4,
+    "image": "dx7.png"
+  },
+  {
+    "name": "Max",
+    "breed": "Pitbull",
+    "age": 2,
+    "image": "dx7.png"
+  },{
+    "name": "Fudge",
+    "breed": "French Bulldog",
+    "age": 4,
+    "image": "dx7.png"
+  },{
+    "name": "Millie",
+    "breed": "Border Collie",
+    "age": 5,
+    "image": "dx7.png"
+  },{
+    "name": "Charlie",
+    "breed": "German Shepard",
+    "age": 2,
+    "image": "dx7.png"
+    
+  }
+  
+]

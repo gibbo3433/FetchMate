@@ -15,32 +15,9 @@ export const QUERY_USER = gql`
   }
 `;
 
-export const QUERY_CATEGORIES = gql`
-query Categories {
-  categories {
-    name
-  }
-}
-`;
-
-export const QUERY_SINGLE_CATEGORY = gql`
-query Category($name: String!) {
-  category(name: $name) {
-    name
-    products {
-      _id
-      title
-      description
-      image
-      price
-    }
-  }
-}
-`;
-
-export const QUERY_SINGLE_PRODUCT = gql`
-query Product($productId: ID!) {
-  product(productId: $productId) {
+export const QUERY_SINGLE_DOG = gql`
+query Dog($dogId: ID!) {
+  dog(dogId: $dogId) {
     _id
     createdAt
     description
@@ -51,9 +28,9 @@ query Product($productId: ID!) {
 }
 `;
 
-export const QUERY_FEATURED_PRODUCTS = gql`
-query Products {
-  products {
+export const QUERY_FEATURED_DOGS = gql`
+query Dogs {
+  dogs {
     _id
     title
     description
