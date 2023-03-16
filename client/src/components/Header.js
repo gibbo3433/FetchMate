@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -7,49 +7,44 @@ export default function Header() {
       <div class="container flex justify-between h-16 mx-auto">                 
         <ul class="items-stretch hidden space-x-3 lg:flex">
           <li class="flex">
-            <a
-              rel="noopener noreferrer"
-              href="https://github.com/"
+            <RouterLink
+              to="/"
               class="flex items-center px-6 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
             >
               Fetch Mate
-            </a>
+            </RouterLink>
           </li>
           <li class="flex">
-            <a
-              rel="noopener noreferrer"
-              href="https://github.com/"
+            <RouterLink
+              to="/login"
               class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
             >
               Login
-            </a>
+            </RouterLink>
           </li>
           <li class="flex">
-            <a
-              rel="noopener noreferrer"
-              href="https://github.com/"
+            <RouterLink
+              to="/logout"
               class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
             >
               Logout
-            </a>
+            </RouterLink>
           </li>
           <li class="flex">
-            <a
-              rel="noopener noreferrer"
-              href="https://github.com/"
+            <RouterLink
+              to="/signup"
               class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
             >
               Signup
-            </a>
+            </RouterLink>
           </li>
           <li class="flex">
-            <a
-              rel="noopener noreferrer"
-              href="https://github.com/"
+            <RouterLink
+              to="/profile"
               class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
             >
               Profile
-            </a>
+            </RouterLink>
           </li>
         </ul>
       </div>
