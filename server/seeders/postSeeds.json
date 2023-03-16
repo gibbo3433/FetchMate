@@ -1,0 +1,62 @@
+[
+    {
+        "id": "1",
+        "postText": "Hey there, dog lovers! Looking for a companion to join me and my dog for some fun walks around the neighborhood. My dog Max is a friendly and energetic Labrador Retriever who loves to play fetch. We usually go for walks in the morning and evening. Let's connect if you're interested!",
+        "createdAt": "2022-01-01T10:00:00Z",
+        "username": "johndoe"
+    },
+    {
+        "id": "2",
+        "postText": "Hi everyone! I'm Jane and my dog Luna and I love exploring new trails. Luna is a smart and active Australian Shepherd and we usually go for walks in the morning and afternoon. If you're looking for a hiking buddy, we'd love to join you!",
+        "createdAt": "2022-01-02T11:00:00Z",
+        "username": "janedoe"
+    },
+    {
+        "id": "3",
+        "postText": "Hello fellow dog enthusiasts! I'm Jimmy and my pug Buddy and I are looking for a walking partner. Buddy is a cute and cuddly dog who loves to snuggle. We usually go for walks in the morning and evening. Let's go for a walk together!",
+        "createdAt": "2022-01-03T12:00:00Z",
+        "username": "jimmychoo"
+    },
+    {
+        "id": "4",
+        "postText": "Hey there! I'm Mary and my dog Rosie and I love playing with other dogs at the park. Rosie is a sweet and gentle Golden Retriever who loves to make new friends. We usually go for walks in the morning and afternoon. If you're looking for a playdate for your dog, let's meet up!",
+        "createdAt": "2022-01-04T13:00:00Z",
+        "username": "maryjane"
+    },
+    {
+        "id": "5",
+        "postText": "Greetings fellow dog lovers! My name is Pete and I'm a dog trainer and rescue volunteer. My dog Charlie is a loyal and obedient German Shepherd who loves to learn new tricks. We usually go for walks in the morning and evening. Let's train our dogs together!",
+        "createdAt": "2022-01-05T14:00:00Z",
+        "username": "petelovesdogs"
+    },
+    {
+        "id": "6",
+        "postText": "Hey there, looking for a running buddy! My dog Max and I love going on long runs together. Max is a friendly and energetic Labrador Retriever who loves to play fetch. We usually go for runs in the morning and evening. Let's get in shape together!",
+        "createdAt": "2022-01-06T15:00:00Z",
+        "username": "davidsmith"
+    },
+    {
+        "id": "7",
+        "postText": "Hi everyone! I'm Sarah and my Chihuahua Bella and I love spending time at the dog park. Bella is a sassy and adorable dog who loves cuddling up on laps and getting lots of attention. We usually go to the park in the morning, afternoon, and evening.",
+        "createdAt": "2022-01-07T16:00:00Z",
+        "username": "sarahjones"
+    },
+    {
+        "id": "8",
+        "postText": "Hi everyone! I'm looking for someone to go dog walking with in the mornings. My name is Mike and I have a beautiful Golden Retriever named Maartje. We live in Boston and would love to meet some new friends!",
+        "createdAt": "2022-03-16T08:00:00.000Z",
+        "username": "mikebrown"
+    },
+    {
+        "id": "9",
+        "postText": "Hey there! My name is Emily and I'm searching for a dog walking partner for my furry friend Charlie. We live in Austin and would love to meet other dog lovers in the area. Let's hit the trails together!",
+        "createdAt": "2022-03-15T14:30:00.000Z",
+        "username": "emilywilson"
+    },
+    {
+        "id": "10",
+        "postText": "Hello! My name is Lisa and I'm looking for a dog walking buddy for my sweet Australian Shepherd, Molly. We live in Seattle and would love to explore some new trails with other dog lovers. Join us!",
+        "createdAt": "2022-03-14T16:45:00.000Z",
+        "username": "lisawhite"
+    }
+]

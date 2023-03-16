@@ -1,25 +1,24 @@
 const db = require('../config/connection');
 const { User, Post } = require('../models');
 const userSeeds = require('./userSeeds.json');
-const dogSeeds = require('./dogSeeds.json');
+const postSeeds = require('./postSeeds.json');
 
 
 db.once('open', async () => {
   try {
     await User.deleteMany({});
     await Post.deleteMany({});
-    // await Dog.deleteMany({});
 
     await User.create(userSeeds);
-    // await Post.create(postSeeds);
 
-    for (let i = 0; i < dogSeeds.length; i++) {
-      const { _id, category } = await Dog.create(dogSeeds[i]);
-      const user = await Category.findOneAndUpdate(
-        { name: category },
+    for (let i = 0; i < postSeeds.length; i++) {
+      const { _id, username } = await Post.create(postSeeds[i]);
+      console.log("the username is ", username)
+      await User.findOneAndUpdate(
+        { username: username },
         {
           $addToSet: {
-            dog: _id,
+            posts: _id,
           },
         }
       );

@@ -30,7 +30,7 @@ const postSchema = new Schema({
   postText: {
     type: String,
     minlength: 1,
-    maxlength: 280,
+    maxlength: 400,
     required: true,
   },
   createdAt: {
