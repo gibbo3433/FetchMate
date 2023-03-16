@@ -1,34 +1,32 @@
 // UI Components
-import DogCard from '../components/DogCard'
-import CategoriesLinks from '../components/CategoriesLinks'
+import UserCard from '../components/UserCard'
 
 import { useQuery } from '@apollo/client';
-import { QUERY_FEATURED_DOGS } from '../utils/queries';
+import { QUERY_LOCAL_USERS } from '../utils/queries';
 
-// Shopping Cart
-import { useCart } from '../context/CartContext'
 
 const Home = () => {
-  
-  const { onAddToCart } = useCart()
 
-  const { loading, data } = useQuery(QUERY_FEATURED_DOGS);
-  const dogs = data?.dogs || [];
+  const { loading, data } = useQuery(QUERY_LOCAL_USERS);
+  const users = data?.users || [];
+
+  console.log(users)
+
 
   return (
     <>
-      <div className='w-75 border m-2 p-5'>
+      <div className='p-5 m-2 border w-75'>
         <div className='section-title'>
-          {dogs.map(dog => (
-            <DogCard key={dog.title} {...dog} onAddToCart={()=>onAddToCart(dog)} />
+          {users.map(user => (
+            <UserCard key={user.username} {...user} />
           ))}
         </div>
-      </div>  
-      <div className='w-25 border m-2 p-5'>
+      </div>
+      <div className='p-5 m-2 border w-25'>
+
         <div className='section-title'>
-            Browse the Shop
+          Browse the Shop
         </div>
-        <CategoriesLinks />
       </div>
     </>
   )

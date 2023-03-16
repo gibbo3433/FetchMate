@@ -6,14 +6,11 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_SINGLE_DOG } from '../utils/queries';
 
-
 // Shopping Cart
-import { useCart } from '../context/CartContext'
-import Hero from '../components/Hero';
+// import Hero from '../components/Hero';
 
 const Dog = () => {
 
-  const { onAddToCart } = useCart()
 
   const params = useParams();
   const { dogId } = useParams();
@@ -35,7 +32,7 @@ const Dog = () => {
         <h1>{dogTitle}</h1>
         <div className='section-title'>
 
-          <DogCard key={dog.title} {...dog} onAddToCart={() => onAddToCart(dog)} />
+          <DogCard key={dog.title} {...dog} />
 
         </div>
       </div>
