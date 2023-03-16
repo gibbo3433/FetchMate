@@ -1,5 +1,6 @@
 // UI Components
 import UserCard from '../components/UserCard'
+import Hero from '../components/Hero';
 
 import { useQuery } from '@apollo/client';
 import { QUERY_LOCAL_USERS } from '../utils/queries';
@@ -14,22 +15,22 @@ const Home = () => {
 
 
   return (
-    <>
-      <div className='p-5 m-2 border w-75'>
+    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <div>
+        <Hero />
+      </div>
+  
+      
+  
+      <div className='p-5 m-2 border' style={{ width: '100%', order: 2 }}>
         <div className='section-title'>
           {users.map(user => (
             <UserCard key={user.username} {...user} />
           ))}
         </div>
       </div>
-      <div className='p-5 m-2 border w-25'>
-
-        <div className='section-title'>
-          Browse the Shop
-        </div>
-      </div>
-    </>
-  )
+    </div>
+  );
 }
 
 export default Home
