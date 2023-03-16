@@ -15,7 +15,7 @@ const typeDefs = gql`
     userDogBreed: String
     userDogAge: Int
     userDogBio: String
-    posts: [Posts]!
+    posts: [Post]!
   }
 
   type Post {
@@ -34,7 +34,7 @@ const typeDefs = gql`
     users: [User]
     user(username: String!): User
     me: User
-    posts: [Posts]
+    posts: [Post]
     post(postId: ID!): Post
   }
 

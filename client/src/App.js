@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Dog from './pages/Dog';
-import DogList from './pages/DogList';
+// import DogList from './pages/DogList';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
@@ -41,41 +41,43 @@ const client = new ApolloClient({
 
 function App() {
   return (
+
     <ApolloProvider client={client}>
-        <Router>
+      <Router>
 
-          <Layout>
-            <Routes>
-              <Route
-                path="/"
-                element={<Home />}
-              />
-              <Route
-                path="/login"
-                element={<Login />}
-              />
-              <Route
-                path="/signup"
-                element={<Signup />}
-              />
-              <Route
-                path="/me"
-                element={<Home />}
-              />
-              <Route
-                path="/profiles/:username"
-                element={<Profile />}
-              />
-              <Route
-                path="/dog/:dogId"
-                element={<Dog />}
-              />
+        <Layout>
+          <Routes>
+            <Route
+              path="/"
+              element={<Home />}
+            />
+            <Route
+              path="/login"
+              element={<Login />}
+            />
+            <Route
+              path="/signup"
+              element={<Signup />}
+            />
+            <Route
+              path="/me"
+              element={<Home />}
+            />
+            <Route
+              path="/profiles/:username"
+              element={<Profile />}
+            />
+            <Route
+              path="/dog/:dogId"
+              element={<Dog />}
+            />
 
-            </Routes>
-          </Layout>
+          </Routes>
+        </Layout>
 
-        </Router>
+      </Router>
     </ApolloProvider>
+
   );
 }
 

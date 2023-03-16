@@ -2,15 +2,14 @@
 import DogCard from '../components/DogCard'
 import CategoriesLinks from '../components/CategoriesLinks'
 
+import { QUERY_SINGLE_CATEGORY } from '../utils/queries';
+
+import { useQuery } from '@apollo/client';
 
 
 const DogList = () => {
-  
-  const { onAddToCart } = useCart()
 
-  const { category } = useParams();
-
-  console.log(`DogList: category = ${category}`)
+  const category = 'Dogs';
 
   const { loading, data } = useQuery(QUERY_SINGLE_CATEGORY, {
     // pass URL parameter
@@ -23,17 +22,17 @@ const DogList = () => {
 
   return (
     <>
-      <div className='w-75 border m-2 p-5'>
+      <div className='p-5 m-2 border w-75'>
         <h1>All {categoryName}</h1>
         <div className='section-title'>
           {dogs.map(dog => (
-            <DogCard key={dog.title} {...dog} onAddToCart={()=>onAddToCart(dog)} />
+            <DogCard key={dog.title} {...dog} />
           ))}
         </div>
-      </div>  
-      <div className='w-25 border m-2 p-5'>
+      </div>
+      <div className='p-5 m-2 border w-25'>
         <div className='section-title'>
-            Browse the Shop
+          Browse the Shop
         </div>
         <CategoriesLinks />
       </div>

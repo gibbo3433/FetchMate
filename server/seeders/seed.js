@@ -1,5 +1,5 @@
 const db = require('../config/connection');
-const { User, Dog, } = require('../models');
+const { User, Post } = require('../models');
 const userSeeds = require('./userSeeds.json');
 const dogSeeds = require('./dogSeeds.json');
 
@@ -7,10 +7,11 @@ const dogSeeds = require('./dogSeeds.json');
 db.once('open', async () => {
   try {
     await User.deleteMany({});
-    await Dog.deleteMany({});
+    await Post.deleteMany({});
+    // await Dog.deleteMany({});
 
     await User.create(userSeeds);
-    await Category.create(categorySeeds);
+    // await Post.create(postSeeds);
 
     for (let i = 0; i < dogSeeds.length; i++) {
       const { _id, category } = await Dog.create(dogSeeds[i]);
