@@ -206,3 +206,11 @@
   font-size: 4rem;
   text-align: center;
 }
+
+h4 {
+  color: black;
+}
+
+.card-body {
+  color: black;
+}
