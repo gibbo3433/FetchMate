@@ -13,10 +13,10 @@ const Signup = () => {
     email: "",
     password: "",
     userGender: "",
-    UserAge: "",
+    userAge: "",
     location: "",
-    WalkTimes: "",
-    dogBreeds: "",
+    walkTimes: "",
+    dogBreed: "",
     userDogAge: "",
     userDogName: "",
   });
@@ -29,6 +29,22 @@ const Signup = () => {
     setFormState({
       ...formState,
       [name]: value,
+    });
+  };
+
+  const handleGenderChange = (data) => {
+    const { label, value } = data;
+    setFormState({
+      ...formState,
+      "userGender": value,
+    });
+  };
+
+  const handleDogBreedChange = (data) => {
+    const { label, value } = data;
+    setFormState({
+      ...formState,
+      "dogBreed": value,
     });
   };
 
@@ -84,127 +100,106 @@ const Signup = () => {
   ];
 
   return (
-    <main style={{ display: "flex", flexDirection: "column" }}>
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
-          <div style={{ display: "flex", flexDirection: "column" }} className="card-body">
-            {data ? (
-              <p>
-                Success! You may now head{" "}
-                <Link to="/">back to the homepage.</Link>
-              </p>
-            ) : (
-              <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="Your username"
-                  name="username"
-                  type="text"
-                  value={formState.name}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                {/* <Select
-                  // className="form-input"
-                  // placeholder="Select Gender"
-                  // name="userGender"
-                  // type=""
-                  // value={formState.}
-                  // // onChange={handleChange}
-                  // options = {userGender}
-                  // value={formState.userGender}
-                  // onChange={handleChange}
-                /> */}
-                <input
-                  className="form-input"
-                  placeholder="Enter Age Here"
-                  name="userAge"
-                  type="text"
-                  value={formState.UserAge}
-                  onChange={handleChange}
-                />
-                 <input
-                  className="form-input"
-                  placeholder="Enter Location Here"
-                  name="location"
-                  type="text"
-                  value={formState.location}
-                  onChange={handleChange}
-                />
-                 {/* <Select
-                  // className="form-input"
-                  // placeholder="Select Gender"
-                  // name="userGender"
-                  // type=""
-                  // value={formState.}
-                  // onChange={handleChange}
-                  WalkTimes = {WalkTimes}
-                  value={formState.WalkTimes}
-                  onChange={handleChange}
-                /> */}
-                  {/* <Select
-                  // className="form-input"
-                  // placeholder="Select Gender"
-                  // name="userGender"
-                  // type=""
-                  // value={formState.}
-                  // onChange={handleChange}
-                  dogBreeds = {dogBreeds}
-                  value={formState.dogBreeds}
-                  onChange={handleChange}
-                /> */}
-                <input
-                  className="form-input"
-                  placeholder="Enter Dog Age Here"
-                  name="userDogAge"
-                  type="number"
-                  value={formState.userDogAge}
-                  onChange={handleChange}
-                />
-                 <input
-                  className="form-input"
-                  placeholder="Enter Dog Name Here"
-                  name="userDogName"
-                  type="text"
-                  value={formState.userDogName}
-                  onChange={handleChange}
-                />
+    <>
+      <div className="form-container">
+        <h4 className="form-heading">Sign Up</h4>
+        {data ? (
+          <p>
+            Success! You may now head{" "}
+            <Link to="/">back to the homepage.</Link>
+          </p>
+        ) : (
+          <form onSubmit={handleFormSubmit} className="form-container">
+            <input
+              className="form-input"
+              placeholder="Your username"
+              name="username"
+              type="text"
+              value={formState.name}
+              onChange={handleChange}
+            />
+            <input
+              className="form-input"
+              placeholder="Your email"
+              name="email"
+              type="email"
+              value={formState.email}
+              onChange={handleChange}
+            />
+            <input
+              className="form-input"
+              placeholder="******"
+              name="password"
+              type="password"
+              value={formState.password}
+              onChange={handleChange}
+            />
+            <Select
+              className="form-select"
+              placeholder="Select Gender"
+              name="userGender"
+              setValue={formState.userGender}
+              onChange={handleGenderChange}
+              options={userGender}
+            />
+            <input
+              className="form-input"
+              placeholder="Enter Age Here"
+              name="userAge"
+              type="text"
+              value={formState.userAge}
+              onChange={handleChange}
+            />
+            <input
+              className="form-input"
+              placeholder="Enter Location Here"
+              name="location"
+              type="text"
+              value={formState.location}
+              onChange={handleChange}
+            />
+            <Select
+              className="form-select"
+              placeholder="Select Gender"
+              name="userGender"
+              setValue={formState.dogBreed}
+              onChange={handleDogBreedChange}
+              options={dogBreeds}
+            />
+            <input
+              className="form-input"
+              placeholder="Enter Dog Age Here"
+              name="userDogAge"
+              type="number"
+              value={formState.userDogAge}
+              onChange={handleChange}
+            />
+            <input
+              className="form-input"
+              placeholder="Enter Dog Name Here"
+              name="userDogName"
+              type="text"
+              value={formState.userDogName}
+              onChange={handleChange}
+            />
 
-                <button
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: "pointer" }}
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </form>
-            )}
+            <button
+              className="btn btn-block btn-primary"
+              style={{ cursor: "pointer" }}
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
+        )}
 
-            {error && (
-              <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
-              </div>
-            )}
+        {error && (
+          <div className="p-3 my-3 text-white bg-danger">
+            {error.message}
           </div>
-        </div>
+        )}
       </div>
-    </main>
+    </>
   );
 };
 
