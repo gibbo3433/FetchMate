@@ -13,10 +13,7 @@ const Home = () => {
 
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
-      <div style={{ width: "100%" }}>
-        <Hero />
-      </div>
-  
+      <Hero />
       <div className="p-5 m-2 border" style={{ width: "100%", order: 2 }}>
         <div className="section-title">
           {users.map((user) => (

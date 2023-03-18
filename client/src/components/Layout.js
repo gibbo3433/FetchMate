@@ -1,19 +1,14 @@
-import Header from "./Header"
-import Footer from "./Footer"
-
+import Header from "./Header";
+import Footer from "./Footer";
 
 const Layout = ({ children }) => {
-
   return (
     <div className="wrapper">
       <Header />
-      <div className="container">
-        {children}
-      </div>
+      <div className="container flex mx-auto">{children}</div>
       <Footer />
-
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

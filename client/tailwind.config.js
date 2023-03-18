@@ -1,19 +1,20 @@
 // tailwind.config.js
-const colors = require('tailwindcss/colors')
-
-
+const colors = require("tailwindcss/colors");
 
 module.exports = {
+  mode: "jit",
+  content: [
+    "./components/**/*.{html,js}",
+    "./pages/**/*.{html,js}",
+    "./index.html",
+  ],
   theme: {
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      black: colors.black,
-      white: colors.white,
-      gray: colors.trueGray,
-      indigo: colors.indigo,
-      red: colors.rose,
-      yellow: colors.amber,
-    }
-  }
-}
+    extend: {
+      fontFamily: {
+        comfortaa: ["Comfortaa", "cursive"],
+      },
+    },
+  },
+  variants: {},
+  plugins: [],
+};
