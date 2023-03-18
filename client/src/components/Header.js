@@ -4,7 +4,7 @@ import { Link as RouterLink } from "react-router-dom";
 export default function Header() {
   return (
     <header class="p-4 dark:bg-gray-800 dark:text-gray-100">
-      <div class="container flex justify-between h-16 mx-auto">                 
+      <div class="container flex justify-between h-16 mx-auto">
         <ul class="items-stretch hidden space-x-3 lg:flex">
           <li class="flex">
             <RouterLink
