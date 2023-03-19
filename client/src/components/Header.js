@@ -36,18 +36,20 @@ const Navigation = () => {
   };
   return (
     <nav className="mb-4 px-4 w-full">
-      <ul className="flex">
+      <ul className="flex items-center">
         {Auth.loggedIn() ? (
           <>
             <li className="grow">
               <NavigationLink to="/profile">Profile</NavigationLink>
             </li>
-            <button
-              className="transition ease-in-out duration-300 text-teal-500 lowercase py-2 px-4 border border-teal-500 rounded-md hover:bg-teal-500 hover:text-white"
-              onClick={logout}
-            >
-              Logout
-            </button>
+            <li>
+              <button
+                className="transition ease-in-out duration-300 text-teal-500 lowercase py-2 px-4 border border-teal-500 rounded-md hover:bg-teal-500 hover:text-white"
+                onClick={logout}
+              >
+                Logout
+              </button>
+            </li>
           </>
         ) : (
           <>

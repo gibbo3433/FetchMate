@@ -12,16 +12,14 @@ const Home = () => {
   console.log(users);
 
   return (
-    <div style={{ display: "flex", flexWrap: "wrap" }}>
+    <>
       <Hero />
-      <div className="p-5 m-2 border" style={{ width: "100%", order: 2 }}>
-        <div className="section-title">
-          {users.map((user) => (
-            <UserCard key={user.username} {...user} />
-          ))}
-        </div>
+      <div className="p-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {users.map((user) => (
+          <UserCard key={user.username} {...user} />
+        ))}
       </div>
-    </div>
+    </>
   );
 };
 
