@@ -1,3 +1,6 @@
+@import "tailwind";
+
 body {
-  font-family: 'Comfortaa', cursive;
+  font-family: "Comfortaa", cursive;
+  /* font-family: Arial, Helvetica, sans-serif; */
 }

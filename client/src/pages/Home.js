@@ -6,7 +6,7 @@ import { useQuery } from "@apollo/client";
 import { QUERY_LOCAL_USERS } from "../utils/queries";
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_LOCAL_USERS);
+  const { data } = useQuery(QUERY_LOCAL_USERS);
   const users = data?.users || [];
 
   console.log(users);

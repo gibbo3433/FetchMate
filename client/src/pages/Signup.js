@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Select from 'react-select'
+import Select from "react-select";
 import { Link } from "react-router-dom";
 
 import { useMutation } from "@apollo/client";
@@ -13,9 +13,9 @@ const Signup = () => {
     email: "",
     password: "",
     userGender: "",
-    UserAge: "",
+    userAge: "",
     location: "",
-    WalkTimes: "",
+    walkTimes: "",
     dogBreeds: "",
     userDogAge: "",
     userDogName: "",
@@ -48,39 +48,45 @@ const Signup = () => {
   };
 
   const userGender = [
-    { value: 'Male', label: 'Male' },
-    { value: 'Female', label: 'Female' },
-    { value: 'Other', label: 'Other' },
-  ]
+    { value: "Male", label: "Male" },
+    { value: "Female", label: "Female" },
+    { value: "Other", label: "Other" },
+  ];
 
-  const WalkTimes = [
-    { value: '0-30 minutes', label: '0-30 minutes' },
-    { value: '30-60 minutes', label: '30-60 minutes' },
-    { value: '1 hour - 2 hours', label: '1 hour - 2 hours' },
-    { value: '2 hours +', label: '2 hours +' },
-  ]
+  const walkTimes = [
+    { value: "0-30 minutes", label: "0-30 minutes" },
+    { value: "30-60 minutes", label: "30-60 minutes" },
+    { value: "1 hour - 2 hours", label: "1 hour - 2 hours" },
+    { value: "2 hours +", label: "2 hours +" },
+  ];
 
   const dogBreeds = [
-    { value: 'Airedale Terrier', label: 'Airedale Terrier' },
-    { value: 'Bulldog', label: 'Bulldog' },
-    { value: 'Chihuahua', label: 'Chihuahua' },
-    { value: 'Dachshund', label: 'Dachshund' },
-    { value: 'English Springer Spaniel', label: 'English Springer Spaniel' },
-    { value: 'French Bulldog', label: 'French Bulldog' },
-    { value: 'German Shepherd', label: 'German Shepherd' },
-    { value: 'Golden Retriever', label: 'Golden Retriever' },
-    { value: 'Labrador Retriever', label: 'Labrador Retriever' },
-    { value: 'Poodle', label: 'Poodle' },
-    { value: 'Pomeranian', label: 'Pomeranian' },
-    { value: 'Rottweiler', label: 'Rottweiler' },
-    { value: 'Siberian Husky', label: 'Siberian Husky' },
-    { value: 'Shih Tzu', label: 'Shih Tzu' },
-    { value: 'Staffordshire Bull Terrier', label: 'Staffordshire Bull Terrier' },
-    { value: 'St. Bernard', label: 'St. Bernard' },
-    { value: 'Toy Poodle', label: 'Toy Poodle' },
-    { value: 'Yorkshire Terrier', label: 'Yorkshire Terrier' },
-    { value: 'West Highland White Terrier', label: 'West Highland White Terrier' },
-    { value: 'Weimaraner', label: 'Weimaraner' },
+    { value: "Airedale Terrier", label: "Airedale Terrier" },
+    { value: "Bulldog", label: "Bulldog" },
+    { value: "Chihuahua", label: "Chihuahua" },
+    { value: "Dachshund", label: "Dachshund" },
+    { value: "English Springer Spaniel", label: "English Springer Spaniel" },
+    { value: "French Bulldog", label: "French Bulldog" },
+    { value: "German Shepherd", label: "German Shepherd" },
+    { value: "Golden Retriever", label: "Golden Retriever" },
+    { value: "Labrador Retriever", label: "Labrador Retriever" },
+    { value: "Poodle", label: "Poodle" },
+    { value: "Pomeranian", label: "Pomeranian" },
+    { value: "Rottweiler", label: "Rottweiler" },
+    { value: "Siberian Husky", label: "Siberian Husky" },
+    { value: "Shih Tzu", label: "Shih Tzu" },
+    {
+      value: "Staffordshire Bull Terrier",
+      label: "Staffordshire Bull Terrier",
+    },
+    { value: "St. Bernard", label: "St. Bernard" },
+    { value: "Toy Poodle", label: "Toy Poodle" },
+    { value: "Yorkshire Terrier", label: "Yorkshire Terrier" },
+    {
+      value: "West Highland White Terrier",
+      label: "West Highland White Terrier",
+    },
+    { value: "Weimaraner", label: "Weimaraner" },
   ];
 
   return (
@@ -88,7 +94,10 @@ const Signup = () => {
       <div style={{ display: "flex", flexDirection: "column" }}>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
-          <div style={{ display: "flex", flexDirection: "column" }} className="card-body">
+          <div
+            style={{ display: "flex", flexDirection: "column" }}
+            className="card-body"
+          >
             {data ? (
               <p>
                 Success! You may now head{" "}
@@ -98,15 +107,15 @@ const Signup = () => {
               <form onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
-                  placeholder="Your username"
+                  placeholder="Username"
                   name="username"
                   type="text"
-                  value={formState.name}
+                  value={formState.username}
                   onChange={handleChange}
                 />
                 <input
                   className="form-input"
-                  placeholder="Your email"
+                  placeholder="E-mail"
                   name="email"
                   type="email"
                   value={formState.email}
@@ -120,26 +129,23 @@ const Signup = () => {
                   value={formState.password}
                   onChange={handleChange}
                 />
-                {/* <Select
-                  // className="form-input"
-                  // placeholder="Select Gender"
-                  // name="userGender"
-                  // type=""
-                  // value={formState.}
-                  // // onChange={handleChange}
-                  // options = {userGender}
-                  // value={formState.userGender}
-                  // onChange={handleChange}
-                /> */}
+                <Select
+                  className="form-input"
+                  placeholder="Select Gender"
+                  name="userGender"
+                  options={userGender}
+                  value={formState.userGender}
+                  onChange={handleChange}
+                />
                 <input
                   className="form-input"
                   placeholder="Enter Age Here"
                   name="userAge"
                   type="text"
-                  value={formState.UserAge}
+                  value={formState.userAge}
                   onChange={handleChange}
                 />
-                 <input
+                <input
                   className="form-input"
                   placeholder="Enter Location Here"
                   name="location"
@@ -147,28 +153,23 @@ const Signup = () => {
                   value={formState.location}
                   onChange={handleChange}
                 />
-                 {/* <Select
-                  // className="form-input"
-                  // placeholder="Select Gender"
-                  // name="userGender"
-                  // type=""
-                  // value={formState.}
-                  // onChange={handleChange}
-                  WalkTimes = {WalkTimes}
-                  value={formState.WalkTimes}
+                <Select
+                  className="form-input"
+                  placeholder="Select Walk Time"
+                  name="walkTimes"
+                  type=""
+                  value={formState.walkTimes}
                   onChange={handleChange}
-                /> */}
-                  {/* <Select
-                  // className="form-input"
-                  // placeholder="Select Gender"
-                  // name="userGender"
-                  // type=""
-                  // value={formState.}
-                  // onChange={handleChange}
-                  dogBreeds = {dogBreeds}
+                  options={walkTimes}
+                />
+                <Select
+                  className="form-input"
+                  placeholder="Select Dog Breed"
+                  name="dogBreed"
                   value={formState.dogBreeds}
                   onChange={handleChange}
-                /> */}
+                  options={dogBreeds}
+                />
                 <input
                   className="form-input"
                   placeholder="Enter Dog Age Here"
@@ -177,7 +178,7 @@ const Signup = () => {
                   value={formState.userDogAge}
                   onChange={handleChange}
                 />
-                 <input
+                <input
                   className="form-input"
                   placeholder="Enter Dog Name Here"
                   name="userDogName"
