@@ -33,48 +33,48 @@ const Profile = () => {
   }
 
   return (
-    <div>
-      <div className="flex flex-col items-center my-3">
-        <h2 className="w-full md:w-10/12 bg-gray-900 text-white py-3 px-4 mb-5">
+    <div className="flex justify-center">
+      <div className="flex flex-col items-center my-auto">
+        <h2 className="w-full md:w-10/12 bg-teal-500 text-white py-3 px-4 mb-5 rounded-xl">
           Viewing {userParam ? `${user.username}'s` : "your"} profile.
         </h2>
 
         <div className="w-full md:w-10/12 mb-5">
           <div className="flex flex-wrap">
             <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-4">
-              <p className="text-gray-600">Username:</p>
+              <p className="text-gray-600 underline">Username:</p>
               <p>{user.username}</p>
             </div>
             <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-4">
-              <p className="text-gray-600">Email:</p>
+              <p className="text-gray-600 underline">Email:</p>
               <p>{user.email}</p>
             </div>
             <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-4">
-              <p className="text-gray-600">Gender:</p>
+              <p className="text-gray-600 underline">Gender:</p>
               <p>{user.userGender}</p>
             </div>
             <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-4">
-              <p className="text-gray-600">Age:</p>
+              <p className="text-gray-600 underline">Age:</p>
               <p>{user.userAge}</p>
             </div>
             <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-4">
-              <p className="text-gray-600">Location:</p>
+              <p className="text-gray-600 underline">Location:</p>
               <p>{user.location}</p>
             </div>
             <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-4">
-              <p className="text-gray-600">Walk times:</p>
+              <p className="text-gray-600 underline">Walk times:</p>
               <p>{user.walkTimes}</p>
             </div>
             <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-4">
-              <p className="text-gray-600">Dog breed:</p>
+              <p className="text-gray-600 underline">Dog breed:</p>
               <p>{user.dogBreed}</p>
             </div>
             <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-4">
-              <p className="text-gray-600">Dog age:</p>
+              <p className="text-gray-600 underline">Dog age:</p>
               <p>{user.dogAge}</p>
             </div>
             <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-4">
-              <p className="text-gray-600">Dog name:</p>
+              <p className="text-gray-600 underline">Dog name:</p>
               <p>{user.dogName}</p>
             </div>
           </div>

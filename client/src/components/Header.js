@@ -5,7 +5,7 @@ import logoSrc from "../assets/fetch-mate-notext.png";
 const Logo = () => (
   <RouterLink to="/" className="flex items-center justify-center gap-4 mb-4">
     <img src={logoSrc} width="60" height="60" alt="" />
-    <span className="transition ease-in-out duration-300 text-teal-500 py-2 px-4 border-b-2 border-transparent hover:border-teal-500">
+    <span className="transition ease-in-out duration-300 text-teal-500 py-2 px-4 border-b-2 border-transparent hover:border-teal-500 whitespace-nowrap">
       fetch-mate
     </span>
   </RouterLink>

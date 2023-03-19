@@ -9,7 +9,7 @@ export default function Footer() {
             <a
               rel="noopener noreferrer"
               href="https://github.com/gibbo3433"
-              className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent text-teal-500"
+              className="flex items-center px-4 -mb-1 dark:border-transparent text-teal-500 hover:underline hover:text-teal-500"
             >
               Jordan
             </a>
@@ -18,7 +18,7 @@ export default function Footer() {
             <a
               rel="noopener noreferrer"
               href="https://github.com/Seemabibi"
-              className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent text-teal-500"
+              className="flex items-center px-4 -mb-1 dark:border-transparent text-teal-500 hover:underline hover:text-teal-500"
             >
               Seema
             </a>
@@ -27,7 +27,7 @@ export default function Footer() {
             <a
               rel="noopener noreferrer"
               href="https://github.com/RAXOPAGNE"
-              className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent text-teal-500"
+              className="flex items-center px-4 -mb-1 dark:border-transparent text-teal-500 hover:underline hover:text-teal-500"
             >
               Oskar
             </a>
@@ -36,7 +36,7 @@ export default function Footer() {
             <a
               rel="noopener noreferrer"
               href="https://github.com/maartjeoostvogels"
-              className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent text-teal-500"
+              className="flex items-center px-4 -mb-1 dark:border-transparent text-teal-500 hover:underline hover:text-teal-500"
             >
               Maartje
             </a>
@@ -45,7 +45,7 @@ export default function Footer() {
             <a
               rel="noopener noreferrer"
               href="https://github.com/amarfiguig"
-              className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent text-teal-500"
+              className="flex items-center px-4 -mb-1 dark:border-transparent text-teal-500 hover:underline hover:text-teal-500"
             >
               Ahmed
             </a>
