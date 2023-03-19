@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
-import { UserGender, WalkTimes, DogBreeds, DogAges } from "../data/data";
+import { UserGender, WalkTimes, DogBreed, DogAges } from "../data/data";
 
 import Auth from "../utils/auth";
 
@@ -16,12 +16,10 @@ const Signup = () => {
     userGender: "",
     userAge: "",
     location: "",
-    userBio: "",
-    userWalkTimes: "",
-    userDogName: "",
-    userDogBreed: "",
-    userDogAge: "",
-    userDogBio: "",
+    walkTimes: "",
+    dogBreed: "",
+    dogAge: "",
+    dogName: "",
   });
   const [validationErrors, setValidationErrors] = useState([]);
   const [addUser, { error, data }] = useMutation(ADD_USER);
@@ -35,37 +33,29 @@ const Signup = () => {
     });
   };
 
-  const handleGenderChange = (data) => {
-    const { label, value } = data;
+  const handleGenderChange = ({ value }) =>
     setFormState({
       ...formState,
       userGender: value,
     });
-  };
 
-  const handleDogAgeChange = (data) => {
-    const { label, value } = data;
+  const handleDogAgeChange = ({ value }) =>
     setFormState({
       ...formState,
-      userDogAge: value,
+      dogAge: value,
     });
-  };
 
-  const handleWalkTimeChange = (data) => {
-    const { label, value } = data;
+  const handleWalkTimeChange = ({ value }) =>
     setFormState({
       ...formState,
-      walkTime: value,
+      walkTimes: value,
     });
-  };
 
-  const handleDogBreedChange = (data) => {
-    const { label, value } = data;
+  const handleDogBreedChange = ({ value }) =>
     setFormState({
       ...formState,
       dogBreed: value,
     });
-  };
 
   const validateSubmission = () => {
     const errors = [];
@@ -87,29 +77,28 @@ const Signup = () => {
     if (formState.location.length < 1) {
       errors.push("You must specify your Location.");
     }
-    if (formState.userBio.length < 1) {
-      errors.push("You must enter a Bio.");
-    }
-    if (formState.userWalkTimes.length < 1) {
+    if (formState.walkTimes.length < 1) {
       errors.push("You must enter your preferred Walk Times.");
     }
-    if (formState.userDogName.length < 1) {
+    if (formState.dogName.length < 1) {
       errors.push("You must enter your Dog's Name.");
     }
-    if (formState.userDogBreed.length < 1) {
+    if (formState.dogBreed.length < 1) {
       errors.push("You must enter your Dog's Breed.");
     }
-    if (formState.userDogAge.length < 1) {
+    if (formState.dogAge.length < 1) {
       errors.push("You must enter your Dog's Age.");
-    }
-    if (formState.userDogBio.length < 1) {
-      errors.push("You must enter your Dog's Bio.");
     }
     return errors;
   };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+
+    console.log(formState);
+
+    // Clear any or previous errors
+    setValidationErrors([]);
 
     // Check this is a valid submission first
     const errors = validateSubmission();
@@ -120,11 +109,13 @@ const Signup = () => {
 
     try {
       const { data } = await addUser({
-        variables: { ...formState },
+        variables: {
+          ...formState,
+          userAge: Number.parseInt(formState.userAge),
+        },
       });
 
       Auth.login(data.addUser.token);
-      setValidationErrors([]);
     } catch (e) {
       console.error(e);
     }
@@ -177,7 +168,7 @@ const Signup = () => {
                 className="w-full px-3 py-2 mt-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                 placeholder="Enter your age"
                 name="userAge"
-                type="text"
+                type="number"
                 value={formState.userAge}
                 onChange={handleChange}
               />
@@ -189,53 +180,37 @@ const Signup = () => {
                 value={formState.location}
                 onChange={handleChange}
               />
-              <input
-                className="w-full px-3 py-2 mt-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                placeholder="Bio"
-                name="userBio"
-                type="text"
-                value={formState.userBio}
-                onChange={handleChange}
-              />
               <Select
                 className="mt-2 form-select"
                 placeholder="Typical Walk Time"
-                name="userWalkTimes"
-                setValue={formState.userWalkTimes}
+                name="walkTimes"
+                setValue={formState.walkTimes}
                 onChange={handleWalkTimeChange}
                 options={WalkTimes}
               />
               <input
                 className="w-full px-3 py-2 mt-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                 placeholder="Enter your Dog's Name"
-                name="userDogName"
-                type="number"
-                value={formState.userDogName}
+                name="dogName"
+                type="text"
+                value={formState.dogName}
                 onChange={handleChange}
               />
               <Select
                 className="mt-2 form-select"
                 placeholder="Select Breed"
-                name="userDogBreed"
-                setValue={formState.userDogBreed}
+                name="dogBreed"
+                setValue={formState.dogBreed}
                 onChange={handleDogBreedChange}
-                options={DogBreeds}
+                options={DogBreed}
               />
               <Select
                 className="mt-2 form-select"
                 placeholder="Enter your Dog's Age"
-                name="userDogAge"
-                setValue={formState.userDogAge}
+                name="dogAge"
+                setValue={formState.dogAge}
                 onChange={handleDogAgeChange}
                 options={DogAges}
-              />
-              <input
-                className="w-full px-3 py-2 mt-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                placeholder="Enter Dog Bio"
-                name="userDogBio"
-                type="text"
-                value={formState.userDogBio}
-                onChange={handleChange}
               />
               <button
                 className="px-4 py-2 my-2 text-teal-500 lowercase transition duration-300 ease-in-out border border-teal-500 rounded-md hover:bg-teal-500 hover:text-white animate-pulse"

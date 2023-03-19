@@ -8,12 +8,10 @@ const typeDefs = gql`
     userGender: String
     userAge: Int
     location: String
-    userBio: String
-    userWalkTimes: String
-    userDogName: String
-    userDogBreed: String
-    userDogAge: Int
-    userDogBio: String
+    walkTimes: String
+    dogBreed: String
+    dogAge: String
+    dogName: String
     posts: [Post]!
   }
 
@@ -43,12 +41,12 @@ const typeDefs = gql`
       email: String!
       password: String!
       userGender: String
-      userAge: String
+      userAge: Int
       location: String
       walkTimes: String
-      dogBreeds: String
-      userDogAge: String
-      userDogName: String
+      dogBreed: String
+      dogAge: String
+      dogName: String
     ): Auth
     login(email: String!, password: String!): Auth
   }

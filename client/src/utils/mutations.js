@@ -18,24 +18,24 @@ export const ADD_USER = gql`
     $email: String!
     $password: String!
     $userGender: String
-    $UserAge: String
+    $userAge: Int
     $location: String
-    $WalkTimes: String
-    $dogBreeds: String
-    $userDogAge: String
-    $userDogName: String
+    $walkTimes: String
+    $dogBreed: String
+    $dogAge: String
+    $dogName: String
   ) {
     addUser(
       username: $username
       email: $email
       password: $password
       userGender: $userGender
-      UserAge: $UserAge
+      userAge: $userAge
       location: $location
-      WalkTimes: $WalkTimes
-      dogBreeds: $dogBreeds
-      userDogAge: $userDogAge
-      userDogName: $userDogName
+      walkTimes: $walkTimes
+      dogBreed: $dogBreed
+      dogAge: $dogAge
+      dogName: $dogName
     ) {
       token
       user {
@@ -45,21 +45,6 @@ export const ADD_USER = gql`
     }
   }
 `;
-
-// export const ADD_THOUGHT = gql`
-//   mutation addThought($thoughtText: String!) {
-//     addThought(thoughtText: $thoughtText) {
-//       _id
-//       thoughtText
-//       thoughtAuthor
-//       createdAt
-//       comments {
-//         _id
-//         commentText
-//       }
-//     }
-//   }
-// `;
 
 export const ADD_POST = gql`
   mutation addPost($postText: String!) {
@@ -75,19 +60,3 @@ export const ADD_POST = gql`
     }
   }
 `;
-
-// export const ADD_COMMENT = gql`
-//   mutation addComment($thoughtId: ID!, $commentText: String!) {
-//     addComment(thoughtId: $thoughtId, commentText: $commentText) {
-//       _id
-//       thoughtText
-//       thoughtAuthor
-//       createdAt
-//       comments {
-//         _id
-//         commentText
-//         createdAt
-//       }
-//     }
-//   }
-// `;

@@ -9,12 +9,10 @@ export const QUERY_LOCAL_USERS = gql`
       userGender
       userAge
       location
-      userBio
-      userWalkTimes
-      userDogName
-      userDogBreed
-      userDogAge
-      userDogBio
+      walkTimes
+      dogBreed
+      dogAge
+      dogName
     }
   }
 `;
@@ -25,12 +23,12 @@ export const ADD_USER = gql`
     $email: String!
     $password: String!
     $userGender: String!
-    $userAge: String!
+    $userAge: Int!
     $location: String!
-    $WalkTimes: String!
-    $dogBreeds: String!
-    $userDogAge: String
-    $userDogName: String
+    $walkTimes: String!
+    $dogBreed: String!
+    $dogAge: String
+    $dogName: String
   ) {
     addUser(
       username: $username
@@ -39,10 +37,10 @@ export const ADD_USER = gql`
       userGender: $userGender
       userAge: $userAge
       location: $location
-      WalkTimes: $WalkTimes
-      dogBreeds: $dogBreeds
-      userDogAge: $userDogAge
-      userDogName: $userDogName
+      walkTimes: $walkTimes
+      dogBreed: $dogBreed
+      dogAge: $dogAge
+      dogName: $dogName
     ) {
       token
       user {
@@ -52,25 +50,33 @@ export const ADD_USER = gql`
         userGender
         userAge
         location
-        WalkTimes
-        dogBreeds
-        userDogAge
-        userDogName
+        walkTimes
+        dogBreed
+        dogAge
+        dogName
       }
     }
   }
 `;
 
 export const QUERY_USER = gql`
-  query user($username: String!) {
+  query getUser($username: String!) {
     user(username: $username) {
       _id
       username
       email
-      thoughts {
-        _id
-        thoughtText
+      userGender
+      userAge
+      location
+      walkTimes
+      dogBreed
+      dogAge
+      dogName
+      posts {
+        id
+        postText
         createdAt
+        username
       }
     }
   }
@@ -82,11 +88,18 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      thoughts {
-        _id
-        thoughtText
-        thoughtAuthor
+      userGender
+      userAge
+      location
+      walkTimes
+      dogBreed
+      dogAge
+      dogName
+      posts {
+        id
+        postText
         createdAt
+        username
       }
     }
   }
