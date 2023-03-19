@@ -9,7 +9,7 @@
     "walkTimes": "Morning, evening",
     "dogName": "Max",
     "dogBreed": "Labrador Retriever",
-    "dogAge": 3,
+    "dogAge": "3",
     "posts": []
   },
   {
@@ -22,7 +22,7 @@
     "walkTimes": "Morning, afternoon",
     "dogName": "Luna",
     "dogBreed": "Australian Shepherd",
-    "dogAge": 2,
+    "dogAge": "2",
     "posts": []
   },
   {
@@ -35,7 +35,7 @@
     "walkTimes": "Morning, evening",
     "dogName": "Buddy",
     "dogBreed": "Pug",
-    "dogAge": 5,
+    "dogAge": "5",
     "posts": []
   },
   {
@@ -48,7 +48,7 @@
     "walkTimes": "Morning, afternoon",
     "dogName": "Rosie",
     "dogBreed": "Golden Retriever",
-    "dogAge": 4,
+    "dogAge": "4",
     "posts": []
   },
   {
@@ -61,7 +61,7 @@
     "walkTimes": "Morning, evening",
     "dogName": "Charlie",
     "dogBreed": "German Shepherd",
-    "dogAge": 10,
+    "dogAge": "10",
     "posts": []
   },
   {
@@ -74,7 +74,7 @@
     "walkTimes": "Morning, Evening",
     "dogName": "Max",
     "dogBreed": "Labrador Retriever",
-    "dogAge": 16,
+    "dogAge": "16",
     "posts": []
   },
   {
@@ -87,7 +87,7 @@
     "walkTimes": "Morning, Afternoon, Evening",
     "dogName": "Bella",
     "dogBreed": "Chihuahua",
-    "dogAge": 11,
+    "dogAge": "11",
     "posts": []
   },
   {
@@ -100,7 +100,7 @@
     "walkTimes": "Morning, Afternoon, Evening",
     "dogName": "Maartje",
     "dogBreed": "Golden Retriever",
-    "dogAge": 1,
+    "dogAge": "1",
     "posts": []
   },
   {
@@ -113,7 +113,7 @@
     "walkTimes": "Morning, Afternoon",
     "dogName": "Charlie",
     "dogBreed": "Australian Shepherd",
-    "dogAge": 6,
+    "dogAge": "6",
     "posts": []
   },
   {
@@ -126,7 +126,7 @@
     "walkTimes": "Morning, Afternoon, Evening",
     "dogName": "Molly",
     "dogBreed": "Australian Shepherd",
-    "dogAge": 13,
+    "dogAge": "13",
     "posts": []
   }
 ]

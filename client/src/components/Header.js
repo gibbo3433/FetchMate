@@ -1,6 +1,7 @@
 import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 import logoSrc from "../assets/fetch-mate-notext.png";
+import Auth from "../utils/auth";
 
 const Logo = () => (
   <RouterLink to="/" className="flex items-center justify-center gap-4 mb-4">
@@ -11,7 +12,7 @@ const Logo = () => (
   </RouterLink>
 );
 
-const NavigationButton = ({ to, children }) => (
+const NavigationButtonLink = ({ to, children }) => (
   <RouterLink
     to={to}
     className="transition ease-in-out duration-300 text-teal-500 lowercase py-2 px-4 border border-teal-500 rounded-md hover:bg-teal-500 hover:text-white"
@@ -29,18 +30,35 @@ const NavigationLink = ({ to, children }) => (
 );
 
 const Navigation = () => {
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
   return (
     <nav className="mb-4 px-4 w-full">
       <ul className="flex">
-        <li className="grow">
-          <NavigationLink to="/profile">Profile</NavigationLink>
-        </li>
-        <li className="mr-1 ">
-          <NavigationButton to="/login">Login</NavigationButton>
-        </li>
-        <li className="btn btn-blue">
-          <NavigationButton to="/signup">Signup</NavigationButton>
-        </li>
+        {Auth.loggedIn() ? (
+          <>
+            <li className="grow">
+              <NavigationLink to="/profile">Profile</NavigationLink>
+            </li>
+            <button
+              className="transition ease-in-out duration-300 text-teal-500 lowercase py-2 px-4 border border-teal-500 rounded-md hover:bg-teal-500 hover:text-white"
+              onClick={logout}
+            >
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+            <li className="mr-1">
+              <NavigationButtonLink to="/login">Login</NavigationButtonLink>
+            </li>
+            <li>
+              <NavigationButtonLink to="/signup">Signup</NavigationButtonLink>
+            </li>
+          </>
+        )}
       </ul>
     </nav>
   );

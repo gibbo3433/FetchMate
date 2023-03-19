@@ -22,11 +22,15 @@ const Login = (props) => {
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
+
     try {
+      console.log("Attempting login for ", formState.email);
+
       const { data } = await login({
         variables: { ...formState },
       });
+
+      console.log("login data returned is", data);
 
       Auth.login(data.login.token);
     } catch (e) {
