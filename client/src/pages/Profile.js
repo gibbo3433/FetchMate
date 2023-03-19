@@ -20,7 +20,7 @@ const Profile = () => {
   }
 
   if (loading) {
-    return <div>heyyyyyy</div>;
+    return <div>Loading...</div>;
   }
 
   if (!user?.username) {
