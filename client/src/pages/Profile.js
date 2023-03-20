@@ -1,6 +1,7 @@
 import React from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
+import Posts from "../components/Posts";
 
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
 
@@ -14,6 +15,7 @@ const Profile = () => {
   });
 
   const user = data?.me || data?.user || {};
+
   // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Navigate to="/profile" />;
@@ -78,6 +80,9 @@ const Profile = () => {
               <p>{user.dogName}</p>
             </div>
           </div>
+        </div>
+        <div className="w-full md:w-10/12 px-4">
+          <Posts username={user.username} />
         </div>
       </div>
     </div>

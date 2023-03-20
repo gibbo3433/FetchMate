@@ -1,4 +1,4 @@
-const { Schema, Types, model } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const postSchema = new Schema(
   {
@@ -7,6 +7,11 @@ const postSchema = new Schema(
       minlength: 1,
       maxlength: 400,
       required: true,
+    },
+    location: {
+      type: [Number],
+      default: [0, 0],
+      index: "2dsphere",
     },
     createdAt: {
       type: Date,

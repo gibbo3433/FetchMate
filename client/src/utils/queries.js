@@ -110,6 +110,18 @@ export const QUERY_POST = gql`
     posts {
       id
       postText
+      location
+      createdAt
+      username
+    }
+  }
+`;
+
+export const QUERY_POSTS_BY_USER = gql`
+  query getPosts($username: String!) {
+    postsByUser(username: $username) {
+      id
+      postText
       createdAt
       username
     }

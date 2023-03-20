@@ -1,7 +1,6 @@
 const { User, Post } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
-const bcrypt = require("bcrypt");
 
 const resolvers = {
   Query: {
@@ -23,6 +22,9 @@ const resolvers = {
     post: async (parent, { postId }) => {
       return Post.findOne({ _id: postId });
     },
+    postsByUser: async (parent, { username }) => {
+      return Post.find({ username }).sort({ createdAt: -1 });
+    },
   },
 
   Mutation: {
@@ -30,6 +32,15 @@ const resolvers = {
       const user = await User.create(args);
       const token = signToken(user);
       return { token, user };
+    },
+    addPost: async (parent, args, context) => {
+      if (context.user) {
+        return Post.create({
+          ...args,
+          username: context.user.username,
+        });
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });

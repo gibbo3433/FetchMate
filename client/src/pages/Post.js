@@ -1,86 +1,119 @@
-import React from "react";
-import { Navigate, useParams } from "react-router-dom";
-import { useQuery } from "@apollo/client";
+import React, { useState } from "react";
+// import Select from "react-select";
+import { Link } from "react-router-dom";
 
-import { QUERY_POST, QUERY_ME } from "../utils/queries";
+// import GoogleMapReact from "google-map-react";
 
-import Auth from "../utils/auth";
+import { useMutation } from "@apollo/client";
+import { ADD_POST } from "../utils/mutations";
+
+// import Auth from "../utils/auth";
 
 const Post = () => {
-  const { username: userParam } = useParams();
-
-  const { loading, data } = useQuery(userParam ? QUERY_POST : QUERY_ME, {
-    variables: { username: userParam },
+  const [formState, setFormState] = useState({
+    location: "",
+    postText: "",
   });
+  const [validationErrors, setValidationErrors] = useState([]);
+  const [addPost, { error, data }] = useMutation(ADD_POST);
 
-  const user = data?.me || data?.user || {};
-  // navigate to personal profile page if username is yours
-  if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-    return <Navigate to="/profile" />;
-  }
+  const handleChange = (event) => {
+    const { name, value } = event.target;
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
 
-  if (!user?.username) {
-    return (
-      <h4>
-        You need to be logged in to see this. Use the navigation links above to
-        sign up or log in!
-      </h4>
-    );
-  }
+  const validateSubmission = () => {
+    const errors = [];
+    if (formState.postText.length < 1) {
+      errors.push("Please enter a username.");
+    }
+    if (formState.location.split(",").length < 2) {
+      errors.push("Please enter coordinates, for example 51.48,-3.18");
+    }
+    return errors;
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    console.log(formState);
+
+    // Clear any or previous errors
+    setValidationErrors([]);
+
+    // Check this is a valid submission first
+    const errors = validateSubmission();
+    if (errors.length > 0) {
+      setValidationErrors(errors);
+      return;
+    }
+
+    try {
+      await addPost({
+        variables: {
+          ...formState,
+          location: [...formState.location.split(",")].map((coord) =>
+            Number.parseFloat(coord)
+          ),
+        },
+      });
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   return (
-    <div className="flex justify-center">
-      <div className="flex flex-col items-center my-auto">
-        <h2 className="w-full md:w-10/12 bg-teal-500 text-white py-3 px-4 mb-5 rounded-xl">
-          Viewing {userParam ? `${user.username}'s` : "your"} profile.
-        </h2>
+    <>
+      <div className="items-center mx-auto w-96 form-container justify-items-center">
+        <h4 className="form-heading">Post</h4>
+        {data ? (
+          <p>
+            Success! You may now head <Link to="/">back to the homepage.</Link>
+          </p>
+        ) : (
+          <div className="">
+            <form onSubmit={handleFormSubmit} className="flex flex-col">
+              <input
+                className="w-full px-3 py-2 text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                type="text"
+                name="location"
+                placeholder="Enter coordinates..."
+                onChange={handleChange}
+                value={formState.location}
+              />
+              <textarea
+                className="w-full px-3 py-2 mt-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline h-48"
+                name="postText"
+                onChange={handleChange}
+                value={formState.postText}
+              />
 
-        <div className="w-full md:w-10/12 mb-5">
-          <div className="flex flex-wrap">
-            <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-4">
-              <p className="text-gray-600 underline">Username:</p>
-              <p>{user.username}</p>
-            </div>
-            <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-4">
-              <p className="text-gray-600 underline">Email:</p>
-              <p>{user.email}</p>
-            </div>
-            <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-4">
-              <p className="text-gray-600 underline">Gender:</p>
-              <p>{user.userGender}</p>
-            </div>
-            <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-4">
-              <p className="text-gray-600 underline">Age:</p>
-              <p>{user.userAge}</p>
-            </div>
-            <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-4">
-              <p className="text-gray-600 underline">Location:</p>
-              <p>{user.location}</p>
-            </div>
-            <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-4">
-              <p className="text-gray-600 underline">Walk times:</p>
-              <p>{user.walkTimes}</p>
-            </div>
-            <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-4">
-              <p className="text-gray-600 underline">Dog breed:</p>
-              <p>{user.dogBreed}</p>
-            </div>
-            <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-4">
-              <p className="text-gray-600 underline">Dog age:</p>
-              <p>{user.dogAge}</p>
-            </div>
-            <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-4">
-              <p className="text-gray-600 underline">Dog name:</p>
-              <p>{user.dogName}</p>
-            </div>
+              <button
+                className="px-4 py-2 my-2 text-teal-500 lowercase transition duration-300 ease-in-out border border-teal-500 rounded-md hover:bg-teal-500 hover:text-white animate-pulse cursor-pointer"
+                type="submit"
+              >
+                Post
+              </button>
+            </form>
           </div>
-        </div>
+        )}
+
+        {error && (
+          <div className="p-3 my-3 text-red bg-danger">{error.message}</div>
+        )}
+        {validationErrors.length > 0 && (
+          <div className="p-3 my-3 text-red bg-danger">
+            {validationErrors.map((err) => (
+              <p key={err}>{err}</p>
+            ))}
+          </div>
+        )}
       </div>
-    </div>
+    </>
   );
 };
 

@@ -18,6 +18,7 @@ const typeDefs = gql`
   type Post {
     id: ID
     postText: String
+    location: [Float]!
     createdAt: String
     username: String
   }
@@ -33,6 +34,7 @@ const typeDefs = gql`
     me: User
     posts: [Post]
     post(postId: ID!): Post
+    postsByUser(username: String!): [Post]
   }
 
   type Mutation {
@@ -48,6 +50,7 @@ const typeDefs = gql`
       dogAge: String
       dogName: String
     ): Auth
+    addPost(postText: String!): Post
     login(email: String!, password: String!): Auth
   }
 `;
