@@ -39,8 +39,11 @@ const Navigation = () => {
       <ul className="flex items-center">
         {Auth.loggedIn() ? (
           <>
-            <li className="grow">
+            <li className="">
               <NavigationLink to="/profile">Profile</NavigationLink>
+            </li>
+            <li className="grow">
+              <NavigationLink to="/post">Post</NavigationLink>
             </li>
             <li>
               <button
