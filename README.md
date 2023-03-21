@@ -61,7 +61,7 @@ Technologies used were as follows, React, Tailwind, express, MongoDB, GraphQL
 
 ## Demo/Screenshot
 
-<img width="1440" alt="fetch-mate-screenshot1" src="C:\Users\Oskar\bootcamp\Student\ProThree\fetchmate-screenshot.png">
+<img width="1440" alt="fetch-mate-screenshot1" src="https://github.com/gibbo3433/FetchMate/blob/main/fetchmate-screenshot.png">
 
 ## Deployed Links
 
