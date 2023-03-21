@@ -49,6 +49,23 @@ Ultimately, it doesn't matter which of these options you choose&mdash;it just ne
 
 Consider integrating the Stripe payment platform. Even if you don’t create an e-commerce application, you could set up your site to accept charitable donations.
 
+### Description
+
+Fetch Mate is a platform created with the idea of allowing dog lovers to find and connect with other dog lovers within their area or city. A user has the option to create a profile for themselves and for their beloved pet. When signing up the user has to enter their details as well as their pets. When another person clicks on the ones profile they are presented with the all of the owners details as well as what time they usually walk their pet, the dogs name, breed and age. Although the application concept is new and original the application UI is very easy to navigate and user friendly making sure that people across all age ranges are able to use it wihtout any problem. The application will have room for a lot of functionality improvements to further help and grow the community of pet lovers looking to socialise and look for a potential partner. Furthermore  create the application with the idea of being able to see other users and their profiles on a map which allows the users to pick and choose who they can connect with.
+
+
+### Technologies used
+
+Technologies used were as follows, React, Tailwind, express, MongoDB, GraphQL
+
+
 ## Demo/Screenshot
 
+<img width="1440" alt="fetch-mate-screenshot1" src="C:\Users\Oskar\bootcamp\Student\ProThree\fetchmate-screenshot.png">
+
 ## Deployed Links
+
+SSH - git@github.com:gibbo3433/FetchMate.git
+HTTPS - https://github.com/gibbo3433/FetchMate.git
+
+https://fetch-mate-json.herokuapp.com
