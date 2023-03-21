@@ -2,6 +2,8 @@ import { useQuery } from "@apollo/client";
 import { QUERY_POST } from "../utils/queries";
 import GoogleMapReact from "google-map-react";
 
+const apiKey = process.env.REACT_APP_API_KEY;
+
 const Avatar = ({ username, isMap = false }) => (
   <div
     style={
@@ -31,7 +33,7 @@ const PostsMap = () => {
       <div className="w-full h-96 mb-8">
         <GoogleMapReact
           bootstrapURLKeys={{
-            key: "AIzaSyDWugPnXS1088haeuowJJIKKBeIvrFgW38",
+            key: apiKey,
             libraries: ["places"],
           }}
           defaultCenter={[52.2852, -1.52]}
@@ -56,7 +58,7 @@ const PostsMap = () => {
             </div>
             <div className="flex-auto">
               <p>{post.postText.slice(0, 100)}...</p>
-              <small className="text-teal-500">
+              <small className="text-slate-600">
                 <strong>{post.username}</strong> posted on {post.createdAt}
               </small>
             </div>
